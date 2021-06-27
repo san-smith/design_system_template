@@ -1,4 +1,4 @@
-import 'package:design_system_template/presentation/ui/themes/theme.dart';
+import 'package:design_system_template/main.dart';
 import 'package:flutter/material.dart';
 
 enum ButtonType { primary, secondary, outlined, error }
@@ -22,22 +22,22 @@ class BaseButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextButton(
-      style: _getStyleByScale(_getStyleByType(context)),
+      style: _getStyleByScale(_getStyleByType()),
       onPressed: onPressed,
       child: child,
     );
   }
 
-  ButtonStyle _getStyleByType(BuildContext context) {
+  ButtonStyle _getStyleByType() {
     switch (type) {
       case ButtonType.primary:
-        return getButtonStyleType(context).primary;
+        return buttonStyleType.primary;
       case ButtonType.secondary:
-        return getButtonStyleType(context).secondary;
+        return buttonStyleType.secondary;
       case ButtonType.outlined:
-        return getButtonStyleType(context).outlined;
+        return buttonStyleType.outlined;
       case ButtonType.error:
-        return getButtonStyleType(context).error;
+        return buttonStyleType.error;
     }
   }
 

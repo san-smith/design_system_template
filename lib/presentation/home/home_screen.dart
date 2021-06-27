@@ -1,3 +1,4 @@
+import 'package:design_system_template/main.dart';
 import 'package:design_system_template/presentation/home/label.dart';
 import 'package:design_system_template/presentation/ui/buttons/base_button.dart';
 import 'package:flutter/material.dart';
@@ -32,6 +33,24 @@ class _HomeScreenState extends State<HomeScreen> {
         _buildRow(_buildOutlinedRow()),
         SizedBox(height: 20),
         _buildRow(_buildErrorRow()),
+        SizedBox(height: 20),
+        _buildSwitcher(),
+      ],
+    );
+  }
+
+  Widget _buildSwitcher() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Label('Dark mode:'),
+        SizedBox(width: 10),
+        Switch(
+          value: themeModeNotifier.value == ThemeMode.dark,
+          onChanged: (value) {
+            themeModeNotifier.value = value ? ThemeMode.dark : ThemeMode.light;
+          },
+        ),
       ],
     );
   }

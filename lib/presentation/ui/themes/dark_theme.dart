@@ -7,9 +7,9 @@ final darkTheme = ThemeData.dark().copyWith(
   textButtonTheme: TextButtonThemeData(style: baseButtonTheme),
 );
 
-const _primaryColor = Color(0xFF0A84FF);
-const _errorColor = Color(0xFFFF453A);
-const _secondaryColor = Color.fromRGBO(0, 28, 61, 0.05);
+const _primaryColor = Color(0xFF64D2FF);
+const _errorColor = Color(0xFFFF375F);
+const _secondaryColor = Color.fromRGBO(120, 120, 128, 0.32);
 const _whiteColor = Colors.white;
 
 final darkButtonStyleType = ButtonPropType(
