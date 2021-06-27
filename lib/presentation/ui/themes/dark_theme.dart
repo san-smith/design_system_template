@@ -1,4 +1,4 @@
-import 'package:design_system_template/presentation/ui/themes/button_type.dart';
+import 'package:design_system_template/presentation/ui/themes/button_style_type.dart';
 import 'package:flutter/material.dart';
 
 import 'theme.dart';
@@ -12,7 +12,7 @@ const _errorColor = Color(0xFFFF375F);
 const _secondaryColor = Color.fromRGBO(120, 120, 128, 0.32);
 const _whiteColor = Colors.white;
 
-final darkButtonStyleType = ButtonPropType(
+final darkButtonStyleType = ButtonStyleType(
   primary: baseButtonTheme.copyWith(
     backgroundColor: MaterialStateProperty.all(_primaryColor),
     foregroundColor: MaterialStateProperty.all(_whiteColor),
