@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-final baseButtonTheme = TextButton.styleFrom(
+final baseButtonStyle = TextButton.styleFrom(
   minimumSize: const Size(92, 48),
   padding: const EdgeInsets.symmetric(horizontal: 16),
   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),

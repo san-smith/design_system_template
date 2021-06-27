@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'theme.dart';
 
 final darkTheme = ThemeData.dark().copyWith(
-  textButtonTheme: TextButtonThemeData(style: baseButtonTheme),
+  textButtonTheme: TextButtonThemeData(style: baseButtonStyle),
 );
 
 const _primaryColor = Color(0xFF64D2FF);
@@ -13,15 +13,15 @@ const _secondaryColor = Color.fromRGBO(120, 120, 128, 0.32);
 const _whiteColor = Colors.white;
 
 final darkButtonStyleType = ButtonStyleType(
-  primary: baseButtonTheme.copyWith(
+  primary: baseButtonStyle.copyWith(
     backgroundColor: MaterialStateProperty.all(_primaryColor),
     foregroundColor: MaterialStateProperty.all(_whiteColor),
   ),
-  secondary: baseButtonTheme.copyWith(
+  secondary: baseButtonStyle.copyWith(
     backgroundColor: MaterialStateProperty.all(_secondaryColor),
     foregroundColor: MaterialStateProperty.all(_primaryColor),
   ),
-  outlined: baseButtonTheme.copyWith(
+  outlined: baseButtonStyle.copyWith(
     backgroundColor: MaterialStateProperty.all(Colors.transparent),
     foregroundColor: MaterialStateProperty.all(_primaryColor),
     side: MaterialStateProperty.all(BorderSide(
@@ -29,7 +29,7 @@ final darkButtonStyleType = ButtonStyleType(
       width: 2,
     )),
   ),
-  error: baseButtonTheme.copyWith(
+  error: baseButtonStyle.copyWith(
     foregroundColor: MaterialStateProperty.all(_whiteColor),
     backgroundColor: MaterialStateProperty.all(_errorColor),
   ),
