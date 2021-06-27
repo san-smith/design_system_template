@@ -34,6 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(height: 20),
         _buildRow(_buildErrorRow()),
         SizedBox(height: 20),
+        _buildRow(_buildCustomRow()),
+        SizedBox(height: 20),
         _buildSwitcher(),
       ],
     );
@@ -162,6 +164,44 @@ class _HomeScreenState extends State<HomeScreen> {
         scale: ButtonScale.large,
         child: _buttonTitle,
         onPressed: () {},
+      ),
+    ];
+  }
+
+  List<Widget> _buildCustomRow() {
+    return [
+      Label('Custom style'),
+      BaseButton(
+        type: ButtonType.primary,
+        scale: ButtonScale.small,
+        child: _buttonTitle,
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          backgroundColor: Colors.green,
+          primary: Colors.yellow,
+        ),
+      ),
+      BaseButton(
+        type: ButtonType.primary,
+        scale: ButtonScale.medium,
+        child: _buttonTitle,
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          padding: EdgeInsets.zero,
+          minimumSize: Size(60, 60),
+          shape: StadiumBorder(),
+          elevation: 5,
+        ),
+      ),
+      BaseButton(
+        type: ButtonType.outlined,
+        scale: ButtonScale.large,
+        child: _buttonTitle,
+        onPressed: () {},
+        style: TextButton.styleFrom(
+          side: BorderSide(color: Colors.green, width: 3),
+          shape: StadiumBorder(),
+        ),
       ),
     ];
   }
