@@ -15,7 +15,7 @@ class Application extends StatelessWidget {
       title: 'Flutter Design System Demo',
       theme: lightTheme,
       darkTheme: darkTheme,
-      themeMode: ThemeMode.dark,
+      themeMode: ThemeMode.light,
       home: HomeScreen(),
     );
   }

@@ -1,6 +1,5 @@
 import 'package:design_system_template/presentation/home/label.dart';
 import 'package:design_system_template/presentation/ui/buttons/base_button.dart';
-import 'package:design_system_template/presentation/ui/themes/button_type.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -57,16 +56,19 @@ class _HomeScreenState extends State<HomeScreen> {
       Label('Primary'),
       BaseButton(
         type: ButtonType.primary,
+        scale: ButtonScale.small,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.primary,
+        scale: ButtonScale.medium,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.primary,
+        scale: ButtonScale.large,
         child: _buttonTitle,
         onPressed: () {},
       ),
@@ -78,16 +80,19 @@ class _HomeScreenState extends State<HomeScreen> {
       Label('Secondary'),
       BaseButton(
         type: ButtonType.secondary,
+        scale: ButtonScale.small,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.secondary,
+        scale: ButtonScale.medium,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.secondary,
+        scale: ButtonScale.large,
         child: _buttonTitle,
         onPressed: () {},
       ),
@@ -99,16 +104,19 @@ class _HomeScreenState extends State<HomeScreen> {
       Label('Outlined'),
       BaseButton(
         type: ButtonType.outlined,
+        scale: ButtonScale.small,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.outlined,
+        scale: ButtonScale.medium,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.outlined,
+        scale: ButtonScale.large,
         child: _buttonTitle,
         onPressed: () {},
       ),
@@ -120,16 +128,19 @@ class _HomeScreenState extends State<HomeScreen> {
       Label('Error'),
       BaseButton(
         type: ButtonType.error,
+        scale: ButtonScale.small,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.error,
+        scale: ButtonScale.medium,
         child: _buttonTitle,
         onPressed: () {},
       ),
       BaseButton(
         type: ButtonType.error,
+        scale: ButtonScale.large,
         child: _buttonTitle,
         onPressed: () {},
       ),
