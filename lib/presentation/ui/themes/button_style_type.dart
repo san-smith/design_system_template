@@ -14,27 +14,29 @@ class ButtonStyleType {
     required Color inverse,
     required Color secondary,
     required Color error,
+    required Color disabledBackground,
+    required Color disabledForeground,
   }) {
     return ButtonStyleType(
       primary: style.copyWith(
-        backgroundColor: MaterialStateProperty.all(primary),
-        foregroundColor: MaterialStateProperty.all(inverse),
+        backgroundColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.disabled) ? disabledBackground : primary),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.disabled) ? disabledForeground : inverse),
       ),
       secondary: style.copyWith(
-        backgroundColor: MaterialStateProperty.all(secondary),
-        foregroundColor: MaterialStateProperty.all(primary),
+        backgroundColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.disabled) ? disabledBackground : secondary),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.disabled) ? disabledForeground : primary),
       ),
       outlined: style.copyWith(
         backgroundColor: MaterialStateProperty.all(Colors.transparent),
-        foregroundColor: MaterialStateProperty.all(primary),
-        side: MaterialStateProperty.all(BorderSide(
-          color: primary,
+        foregroundColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.disabled) ? disabledForeground : primary),
+        side: MaterialStateProperty.resolveWith((states) => BorderSide(
+          color: states.contains(MaterialState.disabled) ? disabledBackground : primary,
           width: 2,
         )),
       ),
       error: style.copyWith(
-        foregroundColor: MaterialStateProperty.all(inverse),
-        backgroundColor: MaterialStateProperty.all(error),
+        backgroundColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.disabled) ? disabledBackground : error),
+        foregroundColor: MaterialStateProperty.resolveWith((states) => states.contains(MaterialState.disabled) ? disabledForeground : inverse),
       ),
     );
   }

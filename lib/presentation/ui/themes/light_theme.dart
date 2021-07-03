@@ -7,15 +7,12 @@ final lightTheme = ThemeData.light().copyWith(
   textButtonTheme: TextButtonThemeData(style: baseButtonStyle),
 );
 
-const _primaryColor = Color(0xFF007AFF);
-const _errorColor = Color(0xFFFF3B30);
-const _secondaryColor = Color.fromRGBO(0, 28, 61, 0.05);
-const _whiteColor = Colors.white;
-
 final lightButtonStyleType = ButtonStyleType.fromStyle(
   style: baseButtonStyle,
-  primary: _primaryColor,
-  inverse: _whiteColor,
-  secondary: _secondaryColor,
-  error: _errorColor,
+  primary: Color(0xFF007AFF),
+  inverse: Colors.white,
+  secondary: Color.fromRGBO(0, 28, 61, 0.05),
+  error: Color(0xFFFF3B30),
+  disabledBackground: Color(0xFF979592),
+  disabledForeground: Color(0xFFD1D1D6),
 );
