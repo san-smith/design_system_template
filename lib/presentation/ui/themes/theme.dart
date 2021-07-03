@@ -1,3 +1,6 @@
+import 'package:design_system_template/presentation/ui/themes/button_colors_theme.dart';
+import 'package:design_system_template/presentation/ui/themes/dark_theme.dart';
+import 'package:design_system_template/presentation/ui/themes/light_theme.dart';
 import 'package:flutter/material.dart';
 
 final baseButtonStyle = TextButton.styleFrom(
@@ -10,3 +13,8 @@ final baseButtonStyle = TextButton.styleFrom(
     letterSpacing: 0.2,
   ),
 );
+
+final blueButtonColorsTheme = ButtonColorsTheme(light: blueLightColors, dark: blueDarkColors);
+final tealButtonColorsTheme = ButtonColorsTheme(light: tealLightColors, dark: tealDarkColors);
+final yellowButtonColorsTheme = ButtonColorsTheme(light: yellowLightColors, dark: yellowDarkColors);
+final greenButtonColorsTheme = ButtonColorsTheme(light: greenLightColors, dark: greenDarkColors);

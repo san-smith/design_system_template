@@ -1,7 +1,9 @@
 import 'package:design_system_template/main.dart';
+import 'package:design_system_template/presentation/home/color_item.dart';
 import 'package:design_system_template/presentation/home/label.dart';
 import 'package:design_system_template/presentation/ui/buttons/base_button.dart';
 import 'package:design_system_template/presentation/ui/themes/button_scale.dart';
+import 'package:design_system_template/presentation/ui/themes/button_theme_colors_type.dart';
 import 'package:design_system_template/presentation/ui/themes/button_type.dart';
 import 'package:flutter/material.dart';
 
@@ -38,12 +40,14 @@ class _HomeScreenState extends State<HomeScreen> {
         SizedBox(height: 20),
         _buildRow(_buildCustomRow()),
         SizedBox(height: 20),
-        _buildSwitcher(),
+        _buildModeSwitcher(),
+        SizedBox(height: 20),
+        _buildColorSwitcher(),
       ],
     );
   }
 
-  Widget _buildSwitcher() {
+  Widget _buildModeSwitcher() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -55,6 +59,21 @@ class _HomeScreenState extends State<HomeScreen> {
             themeModeNotifier.value = value ? ThemeMode.dark : ThemeMode.light;
           },
         ),
+      ],
+    );
+  }
+
+  Widget _buildColorSwitcher() {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ColorItem(value: ButtonThemeColorsType.blue, title: 'Blue'),
+        SizedBox(width: 20),
+        ColorItem(value: ButtonThemeColorsType.teal, title: 'Teal'),
+        SizedBox(width: 20),
+        ColorItem(value: ButtonThemeColorsType.yellow, title: 'Yellow'),
+        SizedBox(width: 20),
+        ColorItem(value: ButtonThemeColorsType.green, title: 'Green'),
       ],
     );
   }
