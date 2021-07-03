@@ -1,4 +1,4 @@
-import 'package:design_system_template/presentation/ui/themes/button_style_type.dart';
+import 'package:design_system_template/presentation/ui/themes/button_colors.dart';
 import 'package:flutter/material.dart';
 
 import 'theme.dart';
@@ -7,8 +7,7 @@ final lightTheme = ThemeData.light().copyWith(
   textButtonTheme: TextButtonThemeData(style: baseButtonStyle),
 );
 
-final lightButtonStyleType = ButtonStyleType.fromStyle(
-  style: baseButtonStyle,
+const blueLightColors = ButtonColors(
   primary: Color(0xFF007AFF),
   inverse: Colors.white,
   secondary: Color.fromRGBO(0, 28, 61, 0.05),

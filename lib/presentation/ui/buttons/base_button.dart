@@ -1,9 +1,8 @@
 import 'package:design_system_template/main.dart';
+import 'package:design_system_template/presentation/ui/themes/button_scale.dart';
+import 'package:design_system_template/presentation/ui/themes/button_type.dart';
+import 'package:design_system_template/presentation/ui/themes/theme.dart';
 import 'package:flutter/material.dart';
-
-enum ButtonType { primary, secondary, outlined, error }
-
-enum ButtonScale { small, medium, large }
 
 class BaseButton extends StatelessWidget {
   const BaseButton({
@@ -23,38 +22,11 @@ class BaseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final defaultStyle = _getStyleByScale(_getStyleByType());
+    final defaultStyle = baseButtonStyle.byType(type, buttonColors).byScale(scale);
     return TextButton(
       style: style != null ? style!.merge(defaultStyle) : defaultStyle,
       onPressed: onPressed,
       child: child,
     );
-  }
-
-  ButtonStyle _getStyleByType() {
-    switch (type) {
-      case ButtonType.primary:
-        return buttonStyleType.primary;
-      case ButtonType.secondary:
-        return buttonStyleType.secondary;
-      case ButtonType.outlined:
-        return buttonStyleType.outlined;
-      case ButtonType.error:
-        return buttonStyleType.error;
-    }
-  }
-
-  ButtonStyle _getStyleByScale(ButtonStyle style) {
-    switch (scale) {
-      case ButtonScale.small:
-        return style.copyWith(minimumSize: MaterialStateProperty.all(const Size(75, 30)));
-      case ButtonScale.medium:
-        return style.copyWith(minimumSize: MaterialStateProperty.all(const Size(78, 36)));
-      case ButtonScale.large:
-        return style.copyWith(
-          minimumSize: MaterialStateProperty.all(const Size(88, 44)),
-          padding: MaterialStateProperty.all(EdgeInsets.symmetric(horizontal: 20)),
-        );
-    }
   }
 }

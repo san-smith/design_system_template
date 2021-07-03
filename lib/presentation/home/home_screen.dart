@@ -1,6 +1,8 @@
 import 'package:design_system_template/main.dart';
 import 'package:design_system_template/presentation/home/label.dart';
 import 'package:design_system_template/presentation/ui/buttons/base_button.dart';
+import 'package:design_system_template/presentation/ui/themes/button_scale.dart';
+import 'package:design_system_template/presentation/ui/themes/button_type.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
