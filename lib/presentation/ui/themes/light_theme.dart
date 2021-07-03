@@ -12,25 +12,10 @@ const _errorColor = Color(0xFFFF3B30);
 const _secondaryColor = Color.fromRGBO(0, 28, 61, 0.05);
 const _whiteColor = Colors.white;
 
-final lightButtonStyleType = ButtonStyleType(
-  primary: baseButtonStyle.copyWith(
-    backgroundColor: MaterialStateProperty.all(_primaryColor),
-    foregroundColor: MaterialStateProperty.all(_whiteColor),
-  ),
-  secondary: baseButtonStyle.copyWith(
-    backgroundColor: MaterialStateProperty.all(_secondaryColor),
-    foregroundColor: MaterialStateProperty.all(_primaryColor),
-  ),
-  outlined: baseButtonStyle.copyWith(
-    backgroundColor: MaterialStateProperty.all(Colors.transparent),
-    foregroundColor: MaterialStateProperty.all(_primaryColor),
-    side: MaterialStateProperty.all(BorderSide(
-      color: _primaryColor,
-      width: 2,
-    )),
-  ),
-  error: baseButtonStyle.copyWith(
-    foregroundColor: MaterialStateProperty.all(_whiteColor),
-    backgroundColor: MaterialStateProperty.all(_errorColor),
-  ),
+final lightButtonStyleType = ButtonStyleType.fromStyle(
+  style: baseButtonStyle,
+  primary: _primaryColor,
+  inverse: _whiteColor,
+  secondary: _secondaryColor,
+  error: _errorColor,
 );
