@@ -1,9 +1,10 @@
+import 'package:design_system_template/presentation/ui/themes/custom_button_theme.dart';
+import 'package:design_system_template/presentation/ui/themes/custom_button_theme_data.dart';
 import 'package:design_system_template/presentation/ui/themes/dark_theme.dart';
+import 'package:design_system_template/presentation/ui/themes/theme.dart';
 import 'package:flutter/material.dart';
 
 import 'presentation/home/home_screen.dart';
-import 'presentation/ui/themes/button_colors.dart';
-import 'presentation/ui/themes/button_theme_colors_type.dart';
 import 'presentation/ui/themes/light_theme.dart';
 
 void main() {
@@ -12,17 +13,17 @@ void main() {
 
 final ValueNotifier<ThemeMode> themeModeNotifier = ValueNotifier(ThemeMode.light);
 
-final ValueNotifier<ButtonThemeColorsType> buttonColorsNotifier = ValueNotifier(ButtonThemeColorsType.blue);
+final ValueNotifier<CustomButtonTheme> buttonThemeNotifier = ValueNotifier(blueButtonTheme);
 
-ButtonColors get buttonColors => buttonColorsNotifier.value.byMode(themeModeNotifier.value);
+CustomButtonThemeData get buttonTheme => themeModeNotifier.value == ThemeMode.dark ? buttonThemeNotifier.value.dark : buttonThemeNotifier.value.light;
 
 class Application extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<ThemeMode>(
       valueListenable: themeModeNotifier,
-      builder: (_, mode, __) => ValueListenableBuilder<ButtonThemeColorsType>(
-        valueListenable: buttonColorsNotifier,
+      builder: (_, mode, __) => ValueListenableBuilder(
+        valueListenable: buttonThemeNotifier,
         builder: (_, colors, __) => MaterialApp(
           title: 'Flutter Design System Demo',
           theme: lightTheme,

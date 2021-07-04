@@ -1,5 +1,5 @@
 import 'package:design_system_template/main.dart';
-import 'package:design_system_template/presentation/ui/themes/button_theme_colors_type.dart';
+import 'package:design_system_template/presentation/ui/themes/custom_button_theme.dart';
 import 'package:flutter/material.dart';
 
 class ColorItem extends StatelessWidget {
@@ -9,19 +9,19 @@ class ColorItem extends StatelessWidget {
     required this.title,
   }) : super(key: key);
 
-  final ButtonThemeColorsType value;
+  final CustomButtonTheme value;
   final String title;
 
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Radio<ButtonThemeColorsType>(
+        Radio<CustomButtonTheme>(
           value: value,
-          groupValue: buttonColorsNotifier.value,
+          groupValue: buttonThemeNotifier.value,
           onChanged: (value) {
             if (value != null) {
-              buttonColorsNotifier.value = value;
+              buttonThemeNotifier.value = value;
             }
           },
         ),

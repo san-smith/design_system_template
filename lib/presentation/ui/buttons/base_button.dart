@@ -22,7 +22,7 @@ class BaseButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final defaultStyle = baseButtonStyle.byType(type, buttonColors).byScale(scale);
+    final defaultStyle = baseButtonStyle.byType(type, buttonTheme).byScale(scale);
     return TextButton(
       style: style != null ? style!.merge(defaultStyle) : defaultStyle,
       onPressed: onPressed,

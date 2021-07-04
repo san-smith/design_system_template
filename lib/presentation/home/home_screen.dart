@@ -3,8 +3,8 @@ import 'package:design_system_template/presentation/home/color_item.dart';
 import 'package:design_system_template/presentation/home/label.dart';
 import 'package:design_system_template/presentation/ui/buttons/base_button.dart';
 import 'package:design_system_template/presentation/ui/themes/button_scale.dart';
-import 'package:design_system_template/presentation/ui/themes/button_theme_colors_type.dart';
 import 'package:design_system_template/presentation/ui/themes/button_type.dart';
+import 'package:design_system_template/presentation/ui/themes/theme.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -67,13 +67,13 @@ class _HomeScreenState extends State<HomeScreen> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        ColorItem(value: ButtonThemeColorsType.blue, title: 'Blue'),
+        ColorItem(value: blueButtonTheme, title: 'Blue'),
         SizedBox(width: 20),
-        ColorItem(value: ButtonThemeColorsType.teal, title: 'Teal'),
+        ColorItem(value: tealButtonTheme, title: 'Teal'),
         SizedBox(width: 20),
-        ColorItem(value: ButtonThemeColorsType.yellow, title: 'Yellow'),
+        ColorItem(value: yellowButtonTheme, title: 'Yellow'),
         SizedBox(width: 20),
-        ColorItem(value: ButtonThemeColorsType.green, title: 'Green'),
+        ColorItem(value: greenButtonTheme, title: 'Green'),
       ],
     );
   }

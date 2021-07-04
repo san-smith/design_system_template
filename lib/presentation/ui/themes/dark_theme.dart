@@ -1,4 +1,4 @@
-import 'package:design_system_template/presentation/ui/themes/button_colors.dart';
+import 'package:design_system_template/presentation/ui/themes/custom_button_theme_data.dart';
 import 'package:flutter/material.dart';
 
 import 'theme.dart';
@@ -7,38 +7,48 @@ final darkTheme = ThemeData.dark().copyWith(
   textButtonTheme: TextButtonThemeData(style: baseButtonStyle),
 );
 
-const tealDarkColors = ButtonColors(
-  primary: Color(0xFF64D2FF),
-  inverse: Colors.white,
-  secondary: Color.fromRGBO(120, 120, 128, 0.32),
-  error: Color(0xFFFF375F),
-  disabledBackground: Color(0xFF757575),
-  disabledForeground: Colors.white70,
+const _blue = Color(0xFF0A84FF);
+const _teal = Color(0xFF64D2FF);
+const _yellow = Color(0xFFFFD60A);
+const _green = Color(0xFF32D74B);
+const _white = Colors.white;
+const _secondary = Color.fromRGBO(120, 120, 128, 0.32);
+const _error = Color(0xFFFF375F);
+const _disabledBackground = Color(0xFF757575);
+const _disabledForeground = Colors.white70;
+
+final blueDarkTheme = CustomButtonThemeData.fromColors(
+  primary: _blue,
+  inverse: _white,
+  secondary: _secondary,
+  error: _error,
+  disabledBackground: _disabledBackground,
+  disabledForeground: _disabledForeground,
 );
 
-const yellowDarkColors = ButtonColors(
-  primary: Color(0xFFFFD60A),
-  inverse: Colors.white,
-  secondary: Color.fromRGBO(120, 120, 128, 0.32),
-  error: Color(0xFFFF375F),
-  disabledBackground: Color(0xFF757575),
-  disabledForeground: Colors.white70,
+final tealDarkTheme = CustomButtonThemeData.fromColors(
+  primary: _teal,
+  inverse: _white,
+  secondary: _secondary,
+  error: _error,
+  disabledBackground: _disabledBackground,
+  disabledForeground: _disabledForeground,
 );
 
-const blueDarkColors = ButtonColors(
-  primary: Color(0xFF0A84FF),
-  inverse: Colors.white,
-  secondary: Color.fromRGBO(120, 120, 128, 0.32),
-  error: Color(0xFFFF375F),
-  disabledBackground: Color(0xFF757575),
-  disabledForeground: Colors.white70,
+final yellowDarkTheme = CustomButtonThemeData.fromColors(
+  primary: _yellow,
+  inverse: _white,
+  secondary: _secondary,
+  error: _error,
+  disabledBackground: _disabledBackground,
+  disabledForeground: _disabledForeground,
 );
 
-const greenDarkColors = ButtonColors(
-  primary: Color(0xFF32D74B),
-  inverse: Colors.white,
-  secondary: Color.fromRGBO(120, 120, 128, 0.32),
-  error: Color(0xFFFF375F),
-  disabledBackground: Color(0xFF757575),
-  disabledForeground: Colors.white70,
+final greenDarkTheme = CustomButtonThemeData.fromColors(
+  primary: _green,
+  inverse: _white,
+  secondary: _secondary,
+  error: _error,
+  disabledBackground: _disabledBackground,
+  disabledForeground: _disabledForeground,
 );
